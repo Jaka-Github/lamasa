@@ -54,7 +54,7 @@ function HomePage() {
     <main ref={pageRef}>
       <section className="page-shell relative grid min-h-153.5 grid-cols-[1fr_.92fr] items-center pb-20 pt-14.5 max-[900px]:min-h-137.5 max-[900px]:grid-cols-[1fr_.85fr] max-[600px]:min-h-0 max-[600px]:grid-cols-1 max-[600px]:pb-19.25 max-[600px]:pt-26.75" id="top">
         <div className="home-intro relative z-2 pb-4.25 max-[600px]:pb-0">
-          <h1 className="mb-4.5 mt-6.75 text-[clamp(62px,7.5vw,99px)] font-medium leading-[.96] tracking-[-.075em] text-ink max-[600px]:mt-5.25 max-[600px]:text-[clamp(62px,16vw,84px)]">Setiap bunyi<br />punya <span className="serif-italic">cerita.</span></h1>
+          <h1 className="mb-4.5 mt-6.75 text-[clamp(58px,6.8vw,88px)] font-medium leading-[.96] tracking-[-.075em] text-ink max-[600px]:mt-5.25 max-[600px]:text-[clamp(62px,16vw,84px)]">Setiap bunyi<br />punya <span className="serif-italic">cerita.</span></h1>
           <p className="max-w-97.5 text-[15px] leading-[1.75] text-muted max-[600px]:max-w-82.5 max-[600px]:text-[13px]">Telusuri jejak genre dari akar, perubahan, hingga lagu yang membuatnya hidup.</p>
           <div className="mt-7.25 flex items-center gap-5.5 max-[600px]:mt-5.5 max-[600px]:flex-wrap max-[600px]:gap-3.75">
             <a className="inline-flex min-h-10.75 items-center justify-center gap-3.25 bg-ink px-4 text-[11px] text-white transition hover:-translate-y-0.5 hover:bg-[#4c4c43] md:text-[13px]" href="#genres">Jelajahi <ArrowDown size={16} /></a>
