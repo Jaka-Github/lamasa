@@ -101,7 +101,7 @@ function GenrePage({ genre }) {
       </section>
 
       <section className="page-shell grid min-h-78.75 grid-cols-[.8fr_1.35fr_.9fr] items-start gap-10.5 border-t border-line py-18 max-[900px]:grid-cols-[.6fr_1.4fr] max-[900px]:gap-6.25 max-[600px]:grid-cols-1 max-[600px]:gap-5.5 max-[600px]:py-13" id="story">
-        <span className="section-index text-black">01 / AWAL MULA</span>
+        <span className="section-index text-black max-[600px]:text-[10px]">01 / AWAL MULA</span>
         <div>
           <span className="eyebrow">DARI MANA SUARANYA BERASAL?</span>
           <h2 className="mb-0 mt-3.5 max-w-110 text-[35px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.5 max-[600px]:text-[31px]">{genre.name} tidak muncul begitu saja.</h2>
@@ -136,7 +136,7 @@ function GenrePage({ genre }) {
 
       <section className="page-shell border-t border-line pb-22 pt-19 max-[600px]:pb-15 max-[600px]:pt-13.5">
         <div className="mb-10.5 flex items-end justify-between gap-8.75 max-[600px]:mb-7.25 max-[600px]:flex-col max-[600px]:items-start max-[600px]:gap-3.75">
-          <div><span className="section-index text-black">03 / CABANG SUARA</span><h2 className="mb-0 mt-4.25 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-4xl">Satu akar,<br /><span className="serif-italic">banyak arah.</span></h2></div>
+          <div><span className="section-index text-black max-[600px]:text-[10px]">03 / CABANG SUARA</span><h2 className="mb-0 mt-4.25 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-4xl">Satu akar,<br /><span className="serif-italic">banyak arah.</span></h2></div>
           <p className="mb-1.25 max-w-78.75 text-xs leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mb-0 max-[600px]:max-w-87.5 max-[600px]:text-[11px]">Subgenre saling tumpang tindih dan terus berevolusi. Ini beberapa jalur untuk mulai mendengar lebih dekat.</p>
         </div>
         <div className="subgenre-grid grid grid-cols-4 gap-3.5 perspective-[1000px] max-[900px]:grid-cols-2 max-[600px]:gap-2.5">
