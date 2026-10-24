@@ -1,0 +1,207 @@
+.genre-art {
+  --genre-accent: #e25d3f;
+  --genre-pale: #f5e5dc;
+  position: relative;
+  display: grid;
+  min-height: 310px;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(255, 255, 255, .76), transparent 54%),
+    var(--genre-pale);
+}
+
+.genre-art::before,
+.genre-art::after {
+  content: '';
+  position: absolute;
+  border: 1px solid color-mix(in srgb, var(--genre-accent) 20%, transparent);
+  border-radius: 50%;
+}
+
+.genre-art::before {
+  inset: 12%;
+}
+
+.genre-art::after {
+  width: 60%;
+  aspect-ratio: 1;
+  border-color: color-mix(in srgb, var(--genre-accent) 14%, transparent);
+}
+
+.art-center {
+  z-index: 2;
+  display: grid;
+  width: 42%;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--genre-accent);
+  background: color-mix(in srgb, var(--genre-pale) 72%, white);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--genre-accent) 15%, transparent);
+}
+
+.art-center svg {
+  width: 45%;
+  height: 45%;
+  transform: rotate(-12deg);
+}
+
+.genre-art--hero {
+  z-index: 2;
+  overflow: visible;
+  min-height: 0;
+  background: transparent;
+}
+
+.genre-art--hero .art-center {
+  background: transparent;
+  box-shadow: none;
+}
+
+.genre-art--dotted-icon .art-center svg {
+  stroke-dasharray: 0 2.2;
+  stroke-linecap: round;
+  stroke-width: 2.8;
+}
+
+.art-orbit {
+  position: absolute;
+  z-index: 1;
+  width: 76%;
+  height: 34%;
+  border: 1px solid color-mix(in srgb, var(--genre-accent) 23%, transparent);
+  border-radius: 50%;
+  transform: rotate(-36deg);
+}
+
+.art-orbit--two {
+  width: 68%;
+  height: 27%;
+  border-style: dashed;
+  opacity: .58;
+  transform: rotate(43deg);
+}
+
+.art-spark {
+  position: absolute;
+  z-index: 3;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--genre-accent);
+}
+
+.art-spark--one {
+  top: 25%;
+  right: 25%;
+}
+
+.art-spark--two {
+  bottom: 25%;
+  left: 26%;
+  width: 4px;
+  height: 4px;
+  opacity: .6;
+}
+
+.art-index {
+  position: absolute;
+  right: 7%;
+  bottom: 7%;
+  color: color-mix(in srgb, var(--genre-accent) 43%, transparent);
+  font-family: var(--font-editorial);
+  font-size: 23px;
+  font-style: italic;
+}
+
+.subgenre-card__inner {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.subgenre-card__inner::before {
+  content: '';
+  position: absolute;
+  top: -44px;
+  right: -36px;
+  width: 126px;
+  height: 126px;
+  border: 1px solid color-mix(in srgb, var(--subgenre-accent) 20%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 16px color-mix(in srgb, var(--subgenre-accent) 5%, transparent);
+}
+
+.genre-planet {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.genre-planet canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.genre-hero__art {
+  overflow: visible;
+}
+
+.genre-page {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--genre-pale) 88%, var(--color-paper)) 0%,
+      color-mix(in srgb, var(--genre-pale) 54%, var(--color-paper)) 18%,
+      color-mix(in srgb, var(--genre-pale) 16%, var(--color-paper)) 58%,
+      color-mix(in srgb, var(--genre-pale) 42%, var(--color-paper)) 84%,
+      color-mix(in srgb, var(--genre-pale) 78%, var(--color-paper)) 100%
+    );
+}
+
+.genre-ambience {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.genre-page > section {
+  position: relative;
+  z-index: 1;
+}
+
+.genre-parallax-orb {
+  position: absolute;
+  display: block;
+  width: clamp(300px, 43vw, 620px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--genre-accent) 22%, transparent) 0%,
+    color-mix(in srgb, var(--genre-pale) 58%, transparent) 44%,
+    transparent 72%
+  );
+}
+
+.genre-parallax-orb--one {
+  top: 340px;
+  right: -230px;
+}
+
+.genre-parallax-orb--two {
+  top: 55%;
+  left: -280px;
+  width: clamp(260px, 35vw, 500px);
+  opacity: .82;
+}

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", "Segoe UI", sans-serif;
+  --font-mono: "DM Mono", Consolas, monospace;
+  --font-editorial: "Playfair Display", Georgia, serif;
+  --color-paper: #f8f7f3;
+  --color-ink: #252620;
+  --color-muted: #77766f;
+  --color-line: #e6e4dc;
+}
+
+@utility page-shell {
+  width: min(calc(100% - 112px), 1328px);
+  margin-inline: auto;
+
+  @media (max-width: 900px) {
+    width: min(calc(100% - 56px), 760px);
+  }
+
+  @media (max-width: 600px) {
+    width: calc(100% - 38px);
+  }
+}
+
+@utility eyebrow {
+  color: #77766f;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: .13em;
+  line-height: 1.6;
+
+  @media (width >= 48rem) {
+    font-size: 12px;
+  }
+}
+
+@utility section-index {
+  color: #77766f;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: .13em;
+  line-height: 1.6;
+
+  @media (width >= 48rem) {
+    font-size: 12px;
+  }
+}
+
+@utility serif-italic {
+  font-family: var(--font-editorial);
+  font-weight: 500;
+  letter-spacing: -.06em;
+}
+
+@layer base {
+  :root {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: var(--color-paper);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-optical-sizing: auto;
+    font-weight: 400;
+  }
+
+  html {
+    min-width: 320px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  #root {
+    width: 100%;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::selection {
+    color: #fff;
+    background: #252620;
+  }
+
+  :focus-visible {
+    outline: 2px solid #252620;
+    outline-offset: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
