@@ -8,13 +8,13 @@ function GenreCard({ genre, index }) {
     <Link className="genre-card group block min-w-0" to={`/genre/${genre.slug}`} style={{ '--card-accent': genre.accent, '--genre-pale': genre.pale }}>
       <div className="relative h-57.25 overflow-hidden bg-(--genre-pale) max-[900px]:h-47.5 max-[600px]:h-36.25">
         <GenreArtwork className="transition-transform duration-550 group-hover:scale-[1.045]" genre={genre} />
-        <span className="absolute left-3.75 top-3.5 z-2 font-mono text-[9px] text-[color-mix(in_srgb,var(--card-accent)_75%,#554f45)] md:text-xs max-[600px]:left-2.5 max-[600px]:top-2.25 max-[600px]:text-[8px]">0{index + 1}</span>
+        <span className="absolute left-3.75 top-3.5 z-2 font-mono text-[9px] text-[color-mix(in_srgb,var(--card-accent)_75%,#554f45)] md:text-xs max-[600px]:left-2.5 max-[600px]:top-2.25 max-[600px]:text-[9px]">0{index + 1}</span>
         <span className="absolute bottom-3.25 right-3.25 z-2 grid size-7.25 place-items-center rounded-full border border-[color-mix(in_srgb,var(--card-accent)_20%,transparent)] bg-[rgba(248,247,243,.56)] text-(--card-accent) transition-all group-hover:rotate-45 group-hover:bg-(--card-accent) group-hover:text-white max-[600px]:bottom-2 max-[600px]:right-2 max-[600px]:size-6.25"><ArrowUpRight size={17} /></span>
       </div>
       <div className="px-0.5 pt-4 max-[600px]:pt-3">
-        <span className="eyebrow md:text-xs max-[600px]:text-[7px]">{genre.era}</span>
-        <h3 className="mb-1.25 mt-1.75 text-[21px] font-medium tracking-[-.04em] text-ink max-[600px]:text-[17px]">{genre.name}</h3>
-        <p className="max-w-[320px] text-[11px] leading-[1.7] text-[#85847c] md:text-[13px] max-[600px]:text-[9px] max-[600px]:leading-[1.6]">{genre.description}</p>
+        <span className="eyebrow md:text-xs max-[600px]:text-[9px]">{genre.era}</span>
+        <h3 className="mb-1.25 mt-1.75 text-[21px] font-medium tracking-[-.04em] text-ink max-[600px]:text-[19px]">{genre.name}</h3>
+        <p className="max-w-[320px] text-[11px] leading-[1.7] text-[#85847c] md:text-[13px] max-[600px]:text-[11px] max-[600px]:leading-[1.6]">{genre.description}</p>
       </div>
     </Link>
   )
@@ -63,9 +63,9 @@ export function SubgenreCard({ item, index }) {
           <span className="size-1.75 rounded-full bg-(--subgenre-accent) opacity-75" />
         </div>
         <div className="relative">
-          <span className="eyebrow text-[#929087]">{item.origin}</span>
-          <h3 className="my-1.75 text-[18px] font-medium tracking-[-.045em] text-[#292923] max-[600px]:text-base">{item.name}</h3>
-          <p className="max-w-57.5 text-[10px] leading-[1.65] text-[#85847c] md:text-[13px] max-[600px]:text-[9px]">{item.detail}</p>
+          <span className="eyebrow text-[#929087] max-[600px]:text-[10px]">{item.origin}</span>
+          <h3 className="my-1.75 text-[18px] font-medium tracking-[-.045em] text-[#292923] max-[600px]:text-[18px]">{item.name}</h3>
+          <p className="max-w-57.5 text-[10px] leading-[1.65] text-[#85847c] md:text-[13px] max-[600px]:text-[11px]">{item.detail}</p>
         </div>
         <div className="relative h-px w-8.75 bg-(--subgenre-accent) opacity-70" />
       </div>

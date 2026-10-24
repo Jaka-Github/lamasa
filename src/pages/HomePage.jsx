@@ -57,7 +57,7 @@ function HomePage() {
           <h1 className="mb-4.5 mt-6.75 text-[clamp(58px,6.8vw,88px)] font-medium leading-[.96] tracking-[-.075em] text-ink max-[600px]:mt-5.25 max-[600px]:text-[clamp(62px,16vw,84px)]">Setiap bunyi<br />punya <span className="serif-italic">cerita.</span></h1>
           <p className="max-w-97.5 text-[15px] leading-[1.75] text-muted max-[600px]:max-w-82.5 max-[600px]:text-[13px]">Telusuri jejak genre dari akar, perubahan, hingga lagu yang membuatnya hidup.</p>
           <div className="mt-7.25 flex items-center gap-5.5 max-[600px]:mt-5.5 max-[600px]:flex-wrap max-[600px]:gap-3.75">
-            <a className="inline-flex min-h-10.75 items-center justify-center gap-3.25 bg-ink px-4 text-[11px] text-white transition hover:-translate-y-0.5 hover:bg-[#4c4c43] md:text-[13px]" href="#genres">Jelajahi <ArrowDown size={16} /></a>
+            <a className="inline-flex min-h-10.75 items-center justify-center gap-3.25 bg-ink px-4 text-[11px] text-white transition hover:-translate-y-0.5 hover:bg-[#4c4c43] md:text-[13px] max-[600px]:text-[13px]" href="#genres">Jelajahi <ArrowDown size={16} /></a>
             <span className="inline-flex items-center gap-1.75 text-[10px] text-[#88877f] md:text-xs"><Headphones size={15} /> Baca sambil mendengar</span>
           </div>
         </div>
@@ -77,10 +77,10 @@ function HomePage() {
       <section className="page-shell pb-29.25 pt-24.75 max-[600px]:pb-19.25 max-[600px]:pt-17.5" id="genres">
         <div className="mb-10.25 flex items-end justify-between gap-10 max-[600px]:mb-7.25 max-[600px]:flex-col max-[600px]:items-start max-[600px]:gap-3.75">
           <div>
-            <span className="eyebrow">PILIH JALUR DENGARMU</span>
-            <h2 className="mb-0 mt-4.25 text-[clamp(35px,4vw,48px)] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-4xl">Enam genre,<br /><span className="serif-italic">tak terhitung</span> kemungkinan.</h2>
+            <span className="eyebrow max-[600px]:text-[10px]">PILIH JALUR DENGARMU</span>
+            <h2 className="mb-0 mt-4.25 text-[clamp(35px,4vw,48px)] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-[38px]">Enam genre,<br /><span className="serif-italic">tak terhitung</span> kemungkinan.</h2>
           </div>
-          <p className="mb-1.25 max-w-78.75 text-xs leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mb-0 max-[600px]:max-w-87.5 max-[600px]:text-[11px]">Mulai dari satu genre, ikuti cabangnya, dan temukan bagaimana satu suara memengaruhi suara yang lain.</p>
+          <p className="mb-1.25 max-w-78.75 text-xs leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mb-0 max-[600px]:max-w-87.5 max-[600px]:text-[13px]">Mulai dari satu genre, ikuti cabangnya, dan temukan bagaimana satu suara memengaruhi suara yang lain.</p>
         </div>
         <div className="genre-grid grid grid-cols-3 gap-x-6 gap-y-7.25 max-[600px]:grid-cols-2 max-[600px]:gap-x-3.25 max-[600px]:gap-y-6">
           {genres.map((genre, index) => (

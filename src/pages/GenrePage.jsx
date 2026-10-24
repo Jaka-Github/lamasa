@@ -116,18 +116,18 @@ function GenrePage({ genre }) {
 
       <section className="page-shell border-t border-line pb-21.5 pt-18.75 max-[600px]:pb-15 max-[600px]:pt-13.5">
         <div className="mb-10.5 flex items-end justify-between gap-8.75 max-[600px]:mb-7.25 max-[600px]:flex-col max-[600px]:items-start max-[600px]:gap-3.75">
-          <div><span className="section-index text-black">02 / GARIS WAKTU</span><h2 className="mb-0 mt-4.25 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-4xl">Terus <span className="serif-italic">berubah.</span></h2></div>
-          <p className="mb-1.25 max-w-78.75 text-xs leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mb-0 max-[600px]:max-w-87.5 max-[600px]:text-[11px]">Sebuah sketsa perjalanan, bukan garis yang lurus. Tiap era saling meninggalkan jejak.</p>
+          <div><span className="section-index text-black max-[600px]:text-[10px]">02 / GARIS WAKTU</span><h2 className="mb-0 mt-4.25 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-[38px]">Terus <span className="serif-italic">berubah.</span></h2></div>
+          <p className="mb-1.25 max-w-78.75 text-xs leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mb-0 max-[600px]:max-w-87.5 max-[600px]:text-[13px]">Sebuah sketsa perjalanan, bukan garis yang lurus. Tiap era saling meninggalkan jejak.</p>
         </div>
         <div className="ml-2.5 max-[600px]:ml-1">
           {genre.timeline.map((moment, index) => (
             <article className={`timeline-item relative grid min-h-29.75 grid-cols-[180px_1fr] gap-6 border-l border-[color-mix(in_srgb,var(--genre-accent)_35%,var(--color-line))] pb-6 pl-7.25 pt-0.5 max-[600px]:min-h-0 max-[600px]:grid-cols-1 max-[600px]:gap-1.75 max-[600px]:pb-6 max-[600px]:pl-5 ${index === genre.timeline.length - 1 ? 'min-h-20 border-l-transparent pb-0' : ''}`} key={moment.year}>
               <span className="absolute -left-1 top-1.25 size-1.75 rounded-full bg-(--genre-accent)" />
-              <div className="font-mono text-[10px] text-(--genre-accent) md:text-xs max-[600px]:text-[9px]">{moment.year}</div>
+              <div className="font-mono text-[10px] text-(--genre-accent) md:text-xs max-[600px]:text-[11px]">{moment.year}</div>
               <div>
-                <span className="eyebrow text-[#a19f96]">0{index + 1} — MOMEN</span>
-                <h3 className="mb-1 mt-1.25 text-[17px] font-medium tracking-[-.03em] text-ink max-[600px]:text-base">{moment.title}</h3>
-                <p className="max-w-142.5 text-[11px] leading-[1.75] text-[#85847c] md:text-[13px] max-[600px]:text-[10px]">{moment.text}</p>
+                <span className="eyebrow text-[#a19f96] max-[600px]:text-[10px]">0{index + 1} — MOMEN</span>
+                <h3 className="mb-1 mt-1.25 text-[17px] font-medium tracking-[-.03em] text-ink max-[600px]:text-[18px]">{moment.title}</h3>
+                <p className="max-w-142.5 text-[11px] leading-[1.75] text-[#85847c] md:text-[13px] max-[600px]:text-[12px]">{moment.text}</p>
               </div>
             </article>
           ))}
@@ -148,29 +148,29 @@ function GenrePage({ genre }) {
 
       <section className="listening-section page-shell grid grid-cols-[.72fr_1.5fr] gap-17.5 border-t border-line pb-20.75 pt-19 max-[900px]:grid-cols-[.7fr_1.3fr] max-[900px]:gap-8.75 max-[600px]:grid-cols-1 max-[600px]:gap-6 max-[600px]:pb-14.5 max-[600px]:pt-13.75">
         <div>
-          <span className="section-index text-black">04 / PLAY THE MUSIC</span>
-          <h2 className="mb-0 mt-3.75 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:text-4xl">Mulai dari <span className="serif-italic">sini.</span></h2>
-          <p className="mt-3.75 max-w-78.75 text-[11px] leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mt-2.5">Tiga rekaman sebagai teman perjalanan. Dengarkan bagaimana kisah tadi mengambil bentuk.</p>
+          <span className="section-index text-black max-[600px]:text-[10px]">04 / PLAY THE MUSIC</span>
+          <h2 className="mb-0 mt-3.75 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:text-[38px]">Mulai dari <span className="serif-italic">sini.</span></h2>
+          <p className="mt-3.75 max-w-78.75 text-[11px] leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mt-2.5 max-[600px]:text-[13px]">Tiga rekaman sebagai teman perjalanan. Dengarkan bagaimana kisah tadi mengambil bentuk.</p>
         </div>
         <div className="border-t border-line">
           {genre.tracks.map((track, index) => (
             <article className="track-row grid min-h-19.25 grid-cols-[25px_34px_minmax(150px,1fr)_minmax(110px,.8fr)_40px] items-center gap-3.5 border-b border-line max-[900px]:grid-cols-[20px_30px_minmax(110px,1fr)_34px] max-[900px]:gap-2.5 max-[600px]:min-h-17.75 max-[600px]:grid-cols-[18px_28px_minmax(100px,1fr)_32px] max-[600px]:gap-2" key={track.title}>
-              <span className="font-mono text-[9px] text-[#99978e] md:text-xs">0{index + 1}</span>
+              <span className="font-mono text-[9px] text-[#99978e] md:text-xs max-[600px]:text-[10px]">0{index + 1}</span>
               <span className="grid size-7.75 place-items-center rounded-full bg-(--genre-pale) text-(--genre-accent) transition-transform duration-300 hover:rotate-45"><Disc3 size={20} strokeWidth={1.4} /></span>
-              <div><h3 className="mb-0.75 text-xs font-medium text-ink max-[600px]:text-[11px]">{track.title}</h3><span className="text-[9px] text-[#8b8981] md:text-xs max-[600px]:text-[8px]">{track.artist}</span></div>
+              <div><h3 className="mb-0.75 text-xs font-medium text-ink max-[600px]:text-[12px]">{track.title}</h3><span className="text-[9px] text-[#8b8981] md:text-xs max-[600px]:text-[10px]">{track.artist}</span></div>
               <span className="text-[9px] text-[#8b8981] md:text-xs max-[900px]:hidden">{track.note}</span>
-              <span className="justify-self-end font-mono text-[9px] text-[#99978e] md:text-xs">{track.year}</span>
+              <span className="justify-self-end font-mono text-[9px] text-[#99978e] md:text-xs max-[600px]:text-[10px]">{track.year}</span>
             </article>
           ))}
         </div>
-        <span className="col-start-2 -mt-13 text-[9px] text-[#9b9990] md:text-xs max-[600px]:col-start-1 max-[600px]:-mt-3.75">Cari judul-judul ini di layanan musik favoritmu.</span>
+        <span className="col-start-2 -mt-13 text-[9px] text-[#9b9990] md:text-xs max-[600px]:col-start-1 max-[600px]:-mt-3.75 max-[600px]:text-[11px]">Cari judul-judul ini di layanan musik favoritmu.</span>
       </section>
 
       <section className="genre-sources page-shell flex items-center gap-5 border-t border-line py-5.5 max-[600px]:items-start max-[600px]:flex-col max-[600px]:gap-2.75">
-        <span className="eyebrow shrink-0">BACA LEBIH LANJUT</span>
+        <span className="eyebrow shrink-0 max-[600px]:text-[10px]">BACA LEBIH LANJUT</span>
         <div className="flex flex-wrap gap-x-4.25 gap-y-2.25">
           {genre.sources.map((source) => (
-            <a className="inline-flex items-center gap-1.25 text-[9px] text-[#727169] hover:text-ink md:text-xs" key={source.label} href={source.href} target="_blank" rel="noreferrer">
+            <a className="inline-flex items-center gap-1.25 text-[9px] text-[#727169] hover:text-ink md:text-xs max-[600px]:text-[11px]" key={source.label} href={source.href} target="_blank" rel="noreferrer">
               {source.label}<ArrowRight size={13} />
             </a>
           ))}
@@ -179,7 +179,7 @@ function GenrePage({ genre }) {
 
       <section className="page-shell border-t border-line pb-11.5 pt-7.75">
         <Link to={`/genre/${nextGenre.slug}`} className="group mt-3.25 flex items-center justify-between text-ink">
-          <span className="flex flex-col gap-1 text-4xl tracking-[-.06em] max-[600px]:text-[30px]"><small className="font-mono text-[8px] tracking-widest text-[#89877f] md:text-xs">BERIKUTNYA · 0{(currentIndex + 1) % genres.length + 1}</small>{nextGenre.name}</span>
+          <span className="flex flex-col gap-1 text-4xl tracking-[-.06em] max-[600px]:text-[30px]"><small className="font-mono text-[10px] tracking-widest text-[#89877f] md:text-xs">BERIKUTNYA · 0{(currentIndex + 1) % genres.length + 1}</small>{nextGenre.name}</span>
           <span className="grid size-11.5 shrink-0 place-items-center rounded-full border border-[color-mix(in_srgb,var(--genre-accent)_38%,var(--genre-pale))] bg-[color-mix(in_srgb,var(--genre-pale)_55%,transparent)] text-(--genre-accent) transition-[background-color,border-color,color,transform] duration-300 group-hover:translate-x-1 group-hover:border-(--genre-accent) group-hover:bg-(--genre-accent) group-hover:text-white group-focus-visible:outline-2 group-focus-visible:outline-offset-4 group-focus-visible:outline-(--genre-accent)">
             <ArrowRight className="transition-transform duration-300 group-hover:translate-x-0.5" size={21} />
           </span>
