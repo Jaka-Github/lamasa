@@ -1,4 +1,4 @@
-import { AudioLines, Disc3, Guitar, Mic2, Piano, Radio } from 'lucide-react'
+import { AudioLines, AudioWaveform, Disc3, Guitar, Mic2, Piano, Radio } from 'lucide-react'
 
 const instruments = {
   guitar: Guitar,
@@ -7,6 +7,7 @@ const instruments = {
   synth: Piano,
   microphone: Mic2,
   vinyl: Disc3,
+  audioWaveform: AudioWaveform,
 }
 
 function GenreArtwork({ genre, className = '' }) {
