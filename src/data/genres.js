@@ -26,8 +26,8 @@ export const genres = [
       { name: 'Hard rock', detail: 'Riff gitar tebal dan vokal kuat; payung yang lebih tepat untuk Led Zeppelin, AC/DC, dan Black Sabbath.', origin: 'Akhir 1960-an–1970-an', color: '#e98554' },
       { name: 'Punk rock', detail: 'Cepat, ringkas, dan mandiri—energinya lebih penting daripada kemewahan produksi.', origin: 'Pertengahan 1970-an', color: '#d94b36' },
       { name: 'Alternative rock', detail: 'Ragam rock di luar formula arus utama, dengan pendekatan bunyi dan produksi yang beragam.', origin: '1980-an–1990-an', color: '#8c6376' },
-      { name: 'Grunge', detail: 'Cabang alternative rock dari Seattle; Nirvana menjadi salah satu nama yang paling dikenal.', origin: 'Akhir 1980-an–1990-an', color: '#68766d' },
       { name: 'Slow rock', detail: 'Balada rock bertempo lambat dan emosional; sejumlah power ballad dari band hard rock masuk gaya ini.', origin: '1980-an–1990-an', color: '#c58c4b' },
+      { name: 'Grunge', detail: 'Cabang alternative rock dari Seattle; Nirvana menjadi salah satu nama yang paling dikenal.', origin: 'Akhir 1980-an–1990-an', color: '#68766d' },
     ],
     sources: [
       { label: 'Encyclopaedia Britannica · Rock music', href: 'https://www.britannica.com/art/rock-music' },
