@@ -60,11 +60,6 @@ function HomePage() {
             <a className="inline-flex min-h-10.75 items-center justify-center gap-3.25 bg-ink px-4 text-[11px] text-white transition hover:-translate-y-0.5 hover:bg-[#4c4c43] md:text-[13px]" href="#genres">Jelajahi <ArrowDown size={16} /></a>
             <span className="inline-flex items-center gap-1.75 text-[10px] text-[#88877f] md:text-xs"><Headphones size={15} /> Baca sambil mendengar</span>
           </div>
-          <div className="mt-11.75 flex items-center gap-4.75 text-[10px] text-[#89887f] md:text-xs max-[600px]:mt-7.5">
-            <span><strong className="mr-1.25 font-mono text-[11px] font-normal text-ink md:text-xs">06</strong> genre utama</span>
-            <span className="h-3.25 w-px bg-line" />
-            <span><strong className="mr-1.25 font-mono text-[11px] font-normal text-ink md:text-xs">01</strong> perjalanan panjang</span>
-          </div>
         </div>
 
         <div className="relative -ml-2 grid min-h-111.25 place-items-center max-[900px]:min-h-90 max-[600px]:my-5 max-[600px]:mx-0 max-[600px]:min-h-78.75">
@@ -87,7 +82,7 @@ function HomePage() {
           </div>
           <p className="mb-1.25 max-w-78.75 text-xs leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mb-0 max-[600px]:max-w-87.5 max-[600px]:text-[11px]">Mulai dari satu genre, ikuti cabangnya, dan temukan bagaimana satu suara memengaruhi suara yang lain.</p>
         </div>
-        <div className="grid grid-cols-3 gap-x-6 gap-y-7.25 max-[600px]:grid-cols-2 max-[600px]:gap-x-3.25 max-[600px]:gap-y-6">
+        <div className="genre-grid grid grid-cols-3 gap-x-6 gap-y-7.25 max-[600px]:grid-cols-2 max-[600px]:gap-x-3.25 max-[600px]:gap-y-6">
           {genres.map((genre, index) => (
             <GenreCard key={genre.slug} genre={genre} index={index} />
           ))}
