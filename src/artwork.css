@@ -14,6 +14,10 @@
     var(--genre-pale);
 }
 
+.genre-card .genre-art {
+  min-height: 0;
+}
+
 .genre-art::before,
 .genre-art::after {
   content: '';
