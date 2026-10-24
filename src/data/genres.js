@@ -15,7 +15,7 @@ export const genres = [
       { year: '1950-an', title: 'Lahirnya rock and roll', text: 'Ritme blues dan country bertemu dalam lagu-lagu cepat yang menjangkau pendengar muda.' },
       { year: '1960-an', title: 'Band mengambil alih', text: 'Invasi Britania, folk rock, dan psychedelic rock memperluas bunyi sekaligus ambisi lirik.' },
       { year: '1970-an', title: 'Lebih besar, lebih keras', text: 'Hard rock, punk, dan arena rock menunjukkan betapa luasnya spektrum energi rock.' },
-      { year: '1980-an–kini', title: 'Adegan yang terus bercabang', text: 'Alternative, indie, dan kebangkitan rock lokal menjaga tradisi gitar tetap bergerak.' },
+      { year: '1980-an–kini', title: 'Adegan yang terus bercabang', text: 'Alternative dan grunge berkembang, sementara slow rock Melayu memperkaya warna rock lokal.' },
     ],
     tracks: [
       { title: 'Johnny B. Goode', artist: 'Chuck Berry', year: '1958', note: 'Gitar dan energi rock awal' },
@@ -23,14 +23,21 @@ export const genres = [
       { title: 'Smells Like Teen Spirit', artist: 'Nirvana', year: '1991', note: 'Ledakan alternative rock' },
     ],
     subgenres: [
-      { name: 'Classic rock', detail: 'Lagu berformat band dengan riff gitar yang mudah dikenali dan chorus besar.', origin: '1960-an–70-an', color: '#e98554' },
+      { name: 'Hard rock', detail: 'Riff gitar tebal dan vokal kuat; payung yang lebih tepat untuk Bon Jovi, Guns N’ Roses, dan Scorpions.', origin: 'Akhir 1960-an–70-an', color: '#e98554' },
       { name: 'Punk rock', detail: 'Cepat, ringkas, dan mandiri—energinya lebih penting daripada kemewahan produksi.', origin: 'Pertengahan 1970-an', color: '#d94b36' },
-      { name: 'Alternative', detail: 'Payung untuk pendekatan rock yang menjauh dari formula arus utama.', origin: '1980-an–90-an', color: '#8c6376' },
-      { name: 'Indie rock', detail: 'Semangat independen dalam bunyi gitar yang sering terasa personal dan eksperimental.', origin: '1980-an–kini', color: '#c58c4b' },
+      { name: 'Alternative rock', detail: 'Ragam rock di luar formula arus utama, dengan pendekatan bunyi dan produksi yang beragam.', origin: '1980-an–90-an', color: '#8c6376' },
+      { name: 'Grunge', detail: 'Cabang alternative rock dari Seattle; Nirvana menjadi salah satu nama yang paling dikenal.', origin: 'Akhir 1980-an–90-an', color: '#68766d' },
+      { name: 'Slow rock', detail: 'Balada rock bertempo lambat dan emosional; sejumlah power ballad dari band hard rock masuk gaya ini.', origin: '1980-an–90-an', color: '#c58c4b' },
     ],
     sources: [
       { label: 'Encyclopaedia Britannica · Rock music', href: 'https://www.britannica.com/art/rock-music' },
       { label: 'Rock & Roll Hall of Fame · Education', href: 'https://www.rockhall.com/education' },
+      { label: 'AllMusic · Hard Rock', href: 'https://www.allmusic.com/style/hard-rock-ma0000002637' },
+      { label: 'Britannica · Punk', href: 'https://www.britannica.com/art/punk' },
+      { label: 'Britannica · Alternative rock', href: 'https://www.britannica.com/art/alternative-rock' },
+      { label: 'Britannica · Grunge music', href: 'https://www.britannica.com/art/grunge-music' },
+      { label: 'The Star · Malaysian rock history', href: 'https://www.thestar.com.my/lifestyle/culture/2023/05/29/turning-up-the-volume-on-malaysian-rock-music-history' },
+      { label: 'JUICE · Rock Kapak', href: 'https://juiceonline.com/rock-kapak/' },
     ],
   },
   {
@@ -61,10 +68,12 @@ export const genres = [
       { name: 'Bebop', detail: 'Tempo cepat, harmoni kaya, dan ruang solo yang menempatkan improvisasi di depan.', origin: '1940-an', color: '#855c46' },
       { name: 'Cool jazz', detail: 'Dinamika lebih tenang dan aransemen yang terasa lapang dibanding bebop.', origin: 'Akhir 1940-an', color: '#66888a' },
       { name: 'Jazz fusion', detail: 'Improvisasi jazz bertemu energi rock, instrumen elektrik, dan ritme funk.', origin: 'Akhir 1960-an', color: '#846b9b' },
+      { name: 'New Orleans jazz', detail: 'Jazz awal yang memadukan ragtime, blues, dan tradisi brass band dengan improvisasi bersama.', origin: 'Awal abad ke-20', color: '#b86d6a' },
     ],
     sources: [
       { label: 'Encyclopaedia Britannica · Jazz', href: 'https://www.britannica.com/art/jazz' },
       { label: 'Smithsonian · Jazz', href: 'https://americanhistory.si.edu/explore/collections/object-groups/jazz' },
+      { label: 'JSTOR · Dixieland jazz in New Orleans', href: 'https://www.jstor.org/stable/836968' },
     ],
   },
   {
@@ -95,10 +104,12 @@ export const genres = [
       { name: 'Gangsta rap', detail: 'Narasi keras tentang kehidupan jalanan dan realitas sosial kota.', origin: 'Akhir 1980-an', color: '#6b6260' },
       { name: 'Conscious rap', detail: 'Lirik reflektif yang menyoroti identitas, politik, dan perubahan sosial.', origin: '1980-an–kini', color: '#78916e' },
       { name: 'Trap', detail: '808 yang dalam, hi-hat rapat, dan produksi atmosferik dari Selatan AS.', origin: '2000-an–kini', color: '#806a99' },
+      { name: 'Alternative rap', detail: 'Rap yang bereksperimen dengan produksi dan pengaruh lintas genre di luar formula umum.', origin: 'Pertengahan 1980-an–kini', color: '#b07b62' },
     ],
     sources: [
       { label: 'NMAAHC · Hip-hop history', href: 'https://nmaahc.si.edu/explore/stories/hip-hop-history' },
       { label: 'Encyclopaedia Britannica · Hip-hop', href: 'https://www.britannica.com/art/hip-hop' },
+      { label: 'AllMusic · Alternative rap', href: 'https://www.allmusic.com/style/alternative-rap-ma0000012203' },
     ],
   },
   {
@@ -129,10 +140,13 @@ export const genres = [
       { name: 'Techno', detail: 'Ritme mekanis dan berulang yang dibangun untuk ruang dansa futuristis.', origin: '1980-an', color: '#688e89' },
       { name: 'Ambient', detail: 'Tekstur atmosferik yang memberi ruang untuk mendengar tanpa selalu mengajak berdansa.', origin: '1970-an–kini', color: '#7a8aa0' },
       { name: 'Drum and bass', detail: 'Breakbeat cepat, bass yang dalam, dan dinamika khas soundsystem.', origin: '1990-an', color: '#a0789b' },
+      { name: 'Trance', detail: 'Musik dansa elektronik dengan frase melodi berulang dan build-up yang bertahap.', origin: 'Akhir 1980-an–90-an', color: '#c08a58' },
     ],
     sources: [
       { label: 'Encyclopaedia Britannica · Electronic music', href: 'https://www.britannica.com/art/electronic-music' },
       { label: 'AllMusic · Electronic', href: 'https://www.allmusic.com/genre/electronic-ma0000002572' },
+      { label: 'Encyclopaedia Britannica · Trance music', href: 'https://www.britannica.com/art/trance-music' },
+      { label: 'AllMusic · Trance', href: 'https://www.allmusic.com/subgenre/trance-ma0000002903' },
     ],
   },
   {
@@ -163,10 +177,13 @@ export const genres = [
       { name: 'Dance-pop', detail: 'Lagu pop yang disusun dengan energi dan struktur lantai dansa.', origin: '1980-an–kini', color: '#ce7291' },
       { name: 'Indie pop', detail: 'Melodi ringan dengan pendekatan independen dan sering kali lebih personal.', origin: '1980-an–kini', color: '#a18a69' },
       { name: 'K-pop', detail: 'Ekosistem pop Korea yang memadukan musik, koreografi, visual, dan fandom.', origin: '1990-an–kini', color: '#8d74a4' },
+      { name: 'Britpop', detail: 'Pop-rock gitar yang catchy, terkait erat dengan skena musik Inggris era 1990-an.', origin: 'Britania · 1990-an', color: '#658b84' },
     ],
     sources: [
       { label: 'Encyclopaedia Britannica · Pop music', href: 'https://www.britannica.com/art/pop-music' },
       { label: 'Library of Congress · National Recording Registry', href: 'https://www.loc.gov/programs/national-recording-preservation-board/recording-registry/' },
+      { label: 'BBC News · Birth of Britpop', href: 'https://news.bbc.co.uk/1/hi/entertainment/4144458.stm' },
+      { label: 'AllMusic · Britpop', href: 'https://www.allmusic.com/style/ma0000002480' },
     ],
   },
   {
@@ -197,10 +214,13 @@ export const genres = [
       { name: 'Southern soul', detail: 'Vokal mentah dan emosional dengan iringan ritmis yang terasa hangat.', origin: '1960-an', color: '#a36348' },
       { name: 'Funk', detail: 'Bass dan drum mengambil kendali, menjadikan groove sebagai pusat lagu.', origin: '1960-an–70-an', color: '#7e8b57' },
       { name: 'Neo-soul', detail: 'Tradisi soul dipadukan dengan hip-hop, jazz, dan produksi kontemporer.', origin: '1990-an–kini', color: '#9c7090' },
+      { name: 'Philly soul', detail: 'Soul Philadelphia dengan aransemen string dan horn yang kaya di atas groove R&B.', origin: 'Akhir 1960-an–70-an', color: '#658b84' },
     ],
     sources: [
       { label: 'Encyclopaedia Britannica · Soul music', href: 'https://www.britannica.com/art/soul-music' },
       { label: 'Smithsonian NMAAHC · Stories', href: 'https://nmaahc.si.edu/explore/stories' },
+      { label: 'Smithsonian · Philadelphia Sound', href: 'https://www.smithsonianmag.com/arts-culture/forty-years-of-philadelphia-sound-326818/' },
+      { label: 'AllMusic · Philly soul', href: 'https://www.allmusic.com/style/philly-soul-ma0000002776' },
     ],
   },
 ]
