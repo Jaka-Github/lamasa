@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import GenrePlanet from '../components/GenrePlanet'
 import GenreArtwork from '../components/GenreArtwork'
 import { SubgenreCard } from '../components/GenreCard'
+import NextGenreLink from '../components/NextGenreLink'
 import { genres } from '../data/genres'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -177,13 +178,8 @@ function GenrePage({ genre }) {
         </div>
       </section>
 
-      <section className="page-shell border-t border-line pb-11.5 pt-7.75">
-        <Link to={`/genre/${nextGenre.slug}`} className="group mt-3.25 flex items-center justify-between text-ink no-underline hover:underline">
-          <span className="flex flex-col gap-1 text-4xl tracking-[-.06em] max-[600px]:text-[30px]"><small className="font-mono text-[10px] tracking-widest text-[#89877f] md:text-xs">BERIKUTNYA · 0{(currentIndex + 1) % genres.length + 1}</small>{nextGenre.name}</span>
-          <span className="grid size-11.5 shrink-0 place-items-center rounded-full border border-[color-mix(in_srgb,var(--genre-accent)_38%,var(--genre-pale))] bg-[color-mix(in_srgb,var(--genre-pale)_55%,transparent)] text-(--genre-accent) transition-[background-color,border-color,color,transform] duration-300 group-hover:translate-x-1 group-hover:border-(--genre-accent) group-hover:bg-(--genre-accent) group-hover:text-white group-focus-visible:outline-2 group-focus-visible:outline-offset-4 group-focus-visible:outline-(--genre-accent)">
-            <ArrowRight className="transition-transform duration-300 group-hover:translate-x-0.5" size={21} />
-          </span>
-        </Link>
+      <section className="page-shell border-y border-slate-900/10">
+        <NextGenreLink key={genre.slug} currentAccent={genre.accent} nextGenre={nextGenre} index={(currentIndex + 1) % genres.length} />
       </section>
     </main>
   )
