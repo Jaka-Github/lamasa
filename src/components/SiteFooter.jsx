@@ -1,5 +1,6 @@
-import { ArrowUpRight, Disc3 } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import BrandMark from './BrandMark'
 import { sourceLinks } from '../data/genres'
 
 function SiteFooter() {
@@ -7,8 +8,8 @@ function SiteFooter() {
     <footer className="page-shell grid grid-cols-[.8fr_1.2fr] gap-17.5 border-t border-line py-9 pb-10.75 max-[600px]:grid-cols-1 max-[600px]:gap-7 max-[600px]:py-7.25 max-[600px]:pb-7.5">
       <div className="flex flex-col items-start gap-3">
         <Link className="inline-flex shrink-0 items-center gap-2.25 text-[10px] font-bold tracking-[.14em] md:text-xs max-[600px]:text-[11px]" to="/">
-          <span className="grid size-6.25 place-items-center rounded-full bg-ink text-paper"><Disc3 size={18} strokeWidth={1.7} /></span>
-          <span className="text-[#a19e91]">LAMASA</span>
+          <BrandMark />
+          <span className="font-sans text-[14px] font-semibold tracking-[.12em] text-ink md:text-[15px]">LAMASA</span>
         </Link>
         <p className="text-[10px] text-[#85847c] md:text-[13px] max-[600px]:text-[11px]">Catatan kecil tentang bunyi yang membentuk kita.</p>
         <a className="mt-2 inline-flex items-center gap-1.5 text-[9px] text-muted md:text-xs max-[600px]:text-[11px]" href="#top" onClick={(event) => {

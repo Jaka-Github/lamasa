@@ -91,6 +91,10 @@ function NextGenreLink({ currentAccent, nextGenre, index }) {
     hideProgress(true)
   }
 
+  function handleContextMenu(event) {
+    if (window.matchMedia('(pointer: coarse)').matches) event.preventDefault()
+  }
+
   function handleMouseEnter() {
     if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
     animateFill(1, 0.75, 'power2.inOut')
@@ -137,8 +141,9 @@ function NextGenreLink({ currentAccent, nextGenre, index }) {
     <>
       <Link
         to={`/genre/${nextGenre.slug}`}
-        className="next-genre-link group relative isolate flex min-h-36 select-none items-center justify-between gap-6 overflow-hidden px-8 py-8 text-ink no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--genre-accent) max-[600px]:min-h-32 max-[600px]:gap-4 max-[600px]:px-4 max-[600px]:py-6"
+        className="next-genre-link group relative isolate flex min-h-36 select-none items-center justify-between gap-6 overflow-hidden px-8 py-8 text-ink no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--genre-accent) max-[600px]:min-h-32 max-[600px]:gap-4 max-[600px]:px-4 max-[600px]:py-6 max-[600px]:[-webkit-touch-callout:none]"
         style={{ '--next-genre-accent': nextGenre.accent }}
+        onContextMenu={handleContextMenu}
         onPointerDown={handlePointerDown}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerCancel}

@@ -64,7 +64,7 @@ function HomePage() {
 
         <div className="relative -ml-2 grid min-h-111.25 place-items-center max-[900px]:min-h-90 max-[600px]:my-5 max-[600px]:mx-0 max-[600px]:min-h-78.75">
           <GenreArtwork className="home-artwork h-102.5 min-h-0 w-full max-w-112.5 rotate-2 transition-transform duration-500 max-[900px]:h-82.5 max-[600px]:h-75 max-[600px]:w-full max-[600px]:max-w-87.5" genre={genres[0]} />
-          <div className="absolute right-[-8%] top-[29%] flex items-center gap-2.5 font-editorial text-md leading-normal text-muted transform-[rotate(5deg)] max-[600px]:right-[-1%] max-[600px]:top-[24%] max-[600px]:text-[10px]"><span className="h-px w-6 bg-[#a7a398]" /><em>the sound of then,<br />the feeling of now</em></div>
+          <div className="absolute right-[-8%] top-[29%] flex items-center gap-2.5 font-editorial text-md leading-normal text-muted transform-[rotate(5deg)] max-[600px]:right-[-1%] max-[600px]:top-[24%] max-[600px]:text-[11px]"><span className="h-px w-6 bg-[#a7a398]" /><em>the sound of then,<br />the feeling of now</em></div>
         </div>
       </section>
 
