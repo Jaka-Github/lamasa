@@ -46,13 +46,13 @@ function NextGenreLink({ currentAccent, nextGenre, index }) {
         navigate(`/genre/${nextGenre.slug}`)
       },
     })
-      .to(progressFill, { scaleX: 1, duration: 2, ease: 'none' }, 0)
-      .to(fillRef.current, { scaleX: 1, duration: 2, ease: 'none' }, 0)
+      .to(progressFill, { scaleX: 1, duration: 1.5, ease: 'none' }, 0)
+      .to(fillRef.current, { scaleX: 1, duration: 1.5, ease: 'none' }, 0)
       .to(arrowButtonRef.current, {
         backgroundColor: '#ffffff',
         borderColor: '#ffffff',
         color: nextGenre.accent,
-        duration: 2,
+        duration: 1.5,
         ease: 'none',
       }, 0)
   }
@@ -179,7 +179,7 @@ function NextGenreLink({ currentAccent, nextGenre, index }) {
         <span className="relative z-1 flex flex-col gap-1 tracking-[-.06em]">
           <small className="font-mono text-[10px] tracking-widest text-[#292923] md:text-xs">BERIKUTNYA · 0{index + 1}</small>
           <span className="text-4xl max-[600px]:text-[30px]">{nextGenre.name}</span>
-          <small className="hidden font-sans text-[10px] tracking-normal text-[#292923] max-[600px]:block" id="next-genre-hint">Tahan 2 detik untuk transisi, ketuk untuk buka</small>
+          <small className="hidden font-sans text-[10px] tracking-normal text-[#292923] max-[600px]:block" id="next-genre-hint">Tahan 1,5 detik untuk transisi, ketuk untuk buka</small>
         </span>
         <span ref={arrowButtonRef} className="relative z-1 grid size-11.5 shrink-0 place-items-center rounded-full border border-(--genre-accent) bg-transparent text-(--genre-accent) transition-transform duration-300 group-hover:translate-x-1 max-[600px]:size-10">
           <ArrowRight className="transition-transform duration-300 group-hover:translate-x-0.5" size={21} />
