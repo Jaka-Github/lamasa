@@ -1,15 +1,18 @@
 import { useLayoutEffect, useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 import gsap from 'gsap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function NextGenreLink({ currentAccent, nextGenre, index }) {
+  const navigate = useNavigate()
   const fillRef = useRef(null)
   const arrowButtonRef = useRef(null)
   const progressRef = useRef(null)
   const progressFillRef = useRef(null)
   const pointerIdRef = useRef(null)
+  const holdTimelineRef = useRef(null)
   const holdCompleteRef = useRef(false)
+  const suppressClickRef = useRef(false)
 
   function animateFill(scale, duration, ease) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -33,19 +36,25 @@ function NextGenreLink({ currentAccent, nextGenre, index }) {
     const progressFill = progressFillRef.current
     if (!progress || !progressFill) return
 
-    gsap.killTweensOf([progress, progressFill])
+    holdTimelineRef.current?.kill()
     gsap.set(progress, { autoAlpha: 1 })
     gsap.set(progressFill, { scaleX: 0 })
-    gsap.to(progressFill, {
-      scaleX: 1,
-      duration: 2,
-      ease: 'none',
+    holdTimelineRef.current = gsap.timeline({
       onComplete: () => {
         holdCompleteRef.current = true
+        suppressClickRef.current = true
+        navigate(`/genre/${nextGenre.slug}`)
       },
     })
-    gsap.to(fillRef.current, { scaleX: 1, duration: 2, ease: 'none', overwrite: true })
-    animateArrowButton(true, 2, 'none')
+      .to(progressFill, { scaleX: 1, duration: 2, ease: 'none' }, 0)
+      .to(fillRef.current, { scaleX: 1, duration: 2, ease: 'none' }, 0)
+      .to(arrowButtonRef.current, {
+        backgroundColor: '#ffffff',
+        borderColor: '#ffffff',
+        color: nextGenre.accent,
+        duration: 2,
+        ease: 'none',
+      }, 0)
   }
 
   function hideProgress(resetFill = false) {
@@ -53,6 +62,8 @@ function NextGenreLink({ currentAccent, nextGenre, index }) {
     const progressFill = progressFillRef.current
     if (!progress || !progressFill) return
 
+    holdTimelineRef.current?.kill()
+    holdTimelineRef.current = null
     gsap.killTweensOf([progress, progressFill])
     if (resetFill) {
       gsap.killTweensOf(fillRef.current)
@@ -72,23 +83,30 @@ function NextGenreLink({ currentAccent, nextGenre, index }) {
       || window.matchMedia('(min-width: 601px)').matches
       || window.matchMedia('(prefers-reduced-motion: reduce)').matches
     ) return
-    if (event.isTrusted) event.currentTarget.setPointerCapture(event.pointerId)
     pointerIdRef.current = event.pointerId
     holdCompleteRef.current = false
+    suppressClickRef.current = false
     showProgress()
   }
 
   function handlePointerUp(event) {
     if (pointerIdRef.current !== event.pointerId) return
     pointerIdRef.current = null
-    hideProgress(!holdCompleteRef.current)
+    if (!holdCompleteRef.current) hideProgress(true)
   }
 
   function handlePointerCancel(event) {
     if (pointerIdRef.current !== event.pointerId) return
     pointerIdRef.current = null
     holdCompleteRef.current = false
+    suppressClickRef.current = false
     hideProgress(true)
+  }
+
+  function handleClick(event) {
+    if (!suppressClickRef.current) return
+    event.preventDefault()
+    suppressClickRef.current = false
   }
 
   function handleContextMenu(event) {
@@ -120,6 +138,8 @@ function NextGenreLink({ currentAccent, nextGenre, index }) {
   }
 
   useLayoutEffect(() => {
+    holdTimelineRef.current?.kill()
+    holdTimelineRef.current = null
     gsap.killTweensOf([fillRef.current, arrowButtonRef.current, progressRef.current, progressFillRef.current])
     gsap.set(fillRef.current, { scaleX: 0 })
     gsap.set(arrowButtonRef.current, {
@@ -131,9 +151,11 @@ function NextGenreLink({ currentAccent, nextGenre, index }) {
     gsap.set(progressFillRef.current, { scaleX: 0 })
     pointerIdRef.current = null
     holdCompleteRef.current = false
+    suppressClickRef.current = false
   }, [currentAccent, nextGenre.accent, nextGenre.slug])
 
   useLayoutEffect(() => () => {
+    holdTimelineRef.current?.kill()
     gsap.killTweensOf([fillRef.current, arrowButtonRef.current, progressRef.current, progressFillRef.current])
   }, [])
 
@@ -141,9 +163,10 @@ function NextGenreLink({ currentAccent, nextGenre, index }) {
     <>
       <Link
         to={`/genre/${nextGenre.slug}`}
-        className="next-genre-link group relative isolate flex min-h-36 select-none items-center justify-between gap-6 overflow-hidden px-8 py-8 text-ink no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--genre-accent) max-[600px]:min-h-32 max-[600px]:gap-4 max-[600px]:px-4 max-[600px]:py-6 max-[600px]:[-webkit-touch-callout:none]"
+        className="next-genre-link group relative isolate flex min-h-36 select-none items-center justify-between gap-6 overflow-hidden px-8 py-8 text-ink no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--genre-accent) max-[600px]:min-h-32 max-[600px]:gap-4 max-[600px]:px-4 max-[600px]:py-6 max-[600px]:[touch-action:pan-y_pinch-zoom] max-[600px]:[-webkit-touch-callout:none]"
         style={{ '--next-genre-accent': nextGenre.accent }}
         onContextMenu={handleContextMenu}
+        onClick={handleClick}
         onPointerDown={handlePointerDown}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerCancel}
