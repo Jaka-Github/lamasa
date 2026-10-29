@@ -101,32 +101,31 @@ function GenrePage({ genre }) {
         </a>
       </section>
 
-      <section className="page-shell grid min-h-78.75 grid-cols-[.8fr_1.35fr_.9fr] items-start gap-10.5 border-t border-line py-18 max-[900px]:grid-cols-[.6fr_1.4fr] max-[900px]:gap-6.25 max-[600px]:grid-cols-1 max-[600px]:gap-5.5 max-[600px]:py-13" id="story">
-        <span className="section-index text-black max-[600px]:text-[10px]">01 / AWAL MULA</span>
+      <section className="genre-section-wash page-shell grid min-h-78.75 grid-cols-[.8fr_1.35fr_.9fr] items-start gap-10.5 border-t border-line py-18 max-[900px]:grid-cols-[.6fr_1.4fr] max-[900px]:gap-6.25 max-[600px]:grid-cols-1 max-[600px]:gap-5.5 max-[600px]:py-13" id="story">
+        <span className="section-index text-(--genre-accent) max-[600px]:text-[10px]">01 / AWAL MULA</span>
         <div>
-          <span className="eyebrow">DARI MANA SUARANYA BERASAL?</span>
-          <h2 className="mb-0 mt-3.5 max-w-110 text-[35px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.5 max-[600px]:text-[31px]">{genre.name} tidak muncul begitu saja.</h2>
+          <span className="eyebrow text-(--genre-accent) font-semibold">DARI MANA SUARANYA BERASAL?</span>
+          <h2 className="mb-0 mt-3.5 max-w-110 text-[35px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.5 max-[600px]:text-[31px]">{genre.name}<span className="text-(--genre-accent)">.</span> tidak muncul begitu saja.</h2>
           <p className="mt-4.25 max-w-122.5 text-[13px] leading-[1.85] text-muted max-[600px]:text-xs">{genre.intro}</p>
         </div>
         <div className="story-quote relative min-h-42.5 border-l border-[color-mix(in_srgb,var(--genre-accent)_45%,var(--color-line))] pl-5.25 pt-5.75 max-[900px]:col-start-2 max-[600px]:col-start-1 max-[600px]:min-h-0 max-[600px]:pt-4.5">
           <span className="absolute left-4.25 -top-2 -mb-8 -translate-y-2 font-editorial text-[51px] text-(--genre-accent) opacity-60">“</span>
           <p className="relative z-1 mb-2 font-editorial text-[17px] italic leading-[1.55] text-[#4a4942]">{genre.distinction}</p>
-          <span className="eyebrow">YANG MEMBUATNYA BERBEDA</span>
+          <span className="eyebrow text-(--genre-accent) font-semibold">YANG MEMBUATNYA BERBEDA</span>
         </div>
       </section>
 
       <section className="page-shell border-t border-line pb-21.5 pt-18.75 max-[600px]:pb-15 max-[600px]:pt-13.5">
         <div className="mb-10.5 flex items-end justify-between gap-8.75 max-[600px]:mb-7.25 max-[600px]:flex-col max-[600px]:items-start max-[600px]:gap-3.75">
-          <div><span className="section-index text-black max-[600px]:text-[10px]">02 / GARIS WAKTU</span><h2 className="mb-0 mt-4.25 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-[38px]">Terus <span className="serif-italic">berubah.</span></h2></div>
+          <div><span className="section-index text-(--genre-accent) max-[600px]:text-[10px]">02 / GARIS WAKTU</span><h2 className="mb-0 mt-4.25 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-[38px]">Terus <span className="serif-italic text-(--genre-accent)">berubah.</span></h2></div>
           <p className="mb-1.25 max-w-78.75 text-xs leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mb-0 max-[600px]:max-w-87.5 max-[600px]:text-[13px]">Sebuah sketsa perjalanan, bukan garis yang lurus. Tiap era saling meninggalkan jejak.</p>
         </div>
         <div className="ml-2.5 max-[600px]:ml-1">
           {genre.timeline.map((moment, index) => (
             <article className={`timeline-item relative grid min-h-29.75 grid-cols-[180px_1fr] gap-6 border-l border-[color-mix(in_srgb,var(--genre-accent)_35%,var(--color-line))] pb-6 pl-7.25 pt-0.5 max-[600px]:min-h-0 max-[600px]:grid-cols-1 max-[600px]:gap-1.75 max-[600px]:pb-6 max-[600px]:pl-5 ${index === genre.timeline.length - 1 ? 'min-h-20 border-l-transparent pb-0' : ''}`} key={moment.year}>
               <span className="absolute -left-1 top-1.25 size-1.75 rounded-full bg-(--genre-accent)" />
-              <div className="font-mono text-[10px] text-(--genre-accent) md:text-xs max-[600px]:text-[11px]">{moment.year}</div>
+              <div className="font-mono text-[10px] text-(--genre-accent) md:text-[13px] max-[600px]:text-[12px]">{moment.year}</div>
               <div>
-                <span className="eyebrow text-[#a19f96] max-[600px]:text-[10px]">0{index + 1} — MOMEN</span>
                 <h3 className="mb-1 mt-1.25 text-[17px] font-medium tracking-[-.03em] text-ink max-[600px]:text-[18px]">{moment.title}</h3>
                 <p className="max-w-142.5 text-[11px] leading-[1.75] text-[#85847c] md:text-[13px] max-[600px]:text-[12px]">{moment.text}</p>
               </div>
@@ -135,12 +134,12 @@ function GenrePage({ genre }) {
         </div>
       </section>
 
-      <section className="page-shell border-t border-line pb-22 pt-19 max-[600px]:pb-15 max-[600px]:pt-13.5">
+      <section className="genre-section-wash page-shell border-t border-line pb-22 pt-19 max-[600px]:pb-15 max-[600px]:pt-13.5">
         <div className="mb-10.5 flex items-end justify-between gap-8.75 max-[600px]:mb-7.25 max-[600px]:flex-col max-[600px]:items-start max-[600px]:gap-3.75">
-          <div><span className="section-index text-black max-[600px]:text-[10px]">03 / SUB GENRE</span><h2 className="mb-0 mt-4.25 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-4xl">Satu akar,<br /><span className="serif-italic">banyak arah.</span></h2></div>
+          <div><span className="section-index text-(--genre-accent) max-[600px]:text-[10px]">03 / SUB GENRE</span><h2 className="mb-0 mt-4.25 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-4xl">Satu akar,<br /><span className="serif-italic text-(--genre-accent)">banyak arah.</span></h2></div>
           <p className="mb-1.25 max-w-78.75 text-xs leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mb-0 max-[600px]:max-w-87.5 max-[600px]:text-[11px]">Subgenre saling tumpang tindih dan terus berevolusi. Berikut adalah jalur untuk mengenal <span className="font-semibold">{genre.name}</span> lebih dekat.</p>
         </div>
-        <div className="subgenre-grid grid grid-cols-4 gap-3.5 perspective-[1000px] max-[900px]:grid-cols-2 max-[600px]:gap-2.5">
+        <div className="subgenre-grid grid grid-cols-4 gap-3.5  perspective-[1000px] max-[900px]:grid-cols-2 max-[600px]:gap-2.5">
           {genre.subgenres.map((item, index) => (
             <SubgenreCard key={item.name} item={item} index={index} />
           ))}
@@ -149,14 +148,14 @@ function GenrePage({ genre }) {
 
       <section className="listening-section page-shell grid grid-cols-[.72fr_1.5fr] gap-17.5 border-t border-line pb-20.75 pt-19 max-[900px]:grid-cols-[.7fr_1.3fr] max-[900px]:gap-8.75 max-[600px]:grid-cols-1 max-[600px]:gap-6 max-[600px]:pb-14.5 max-[600px]:pt-13.75">
         <div>
-          <span className="section-index text-black max-[600px]:text-[10px]">04 / PLAY THE MUSIC</span>
+          <span className="section-index text-(--genre-accent) max-[600px]:text-[10px]">04 / PLAY THE MUSIC</span>
           <h2 className="mb-0 mt-3.75 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:text-[38px]">Mulai dari <span className="serif-italic">sini.</span></h2>
           <p className="mt-3.75 max-w-78.75 text-[11px] leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mt-2.5 max-[600px]:text-[13px]">Tiga rekaman sebagai teman perjalanan. Dengarkan bagaimana kisah tadi mengambil bentuk.</p>
         </div>
-        <div className="border-t border-line">
+        <div className="border-t border-[color-mix(in_srgb,var(--genre-accent)_24%,var(--color-line))]">
           {genre.tracks.map((track, index) => (
-            <article className="track-row grid min-h-19.25 grid-cols-[25px_34px_minmax(150px,1fr)_minmax(110px,.8fr)_40px] items-center gap-3.5 border-b border-line max-[900px]:grid-cols-[20px_30px_minmax(110px,1fr)_34px] max-[900px]:gap-2.5 max-[600px]:min-h-17.75 max-[600px]:grid-cols-[18px_28px_minmax(100px,1fr)_32px] max-[600px]:gap-2" key={track.title}>
-              <span className="font-mono text-[9px] text-[#99978e] md:text-xs max-[600px]:text-[10px]">0{index + 1}</span>
+            <article className="track-row grid min-h-19.25 grid-cols-[25px_34px_minmax(150px,1fr)_minmax(110px,.8fr)_40px] items-center gap-3.5 border-b border-[color-mix(in_srgb,var(--genre-accent)_24%,var(--color-line))] px-4 transition-colors hover:bg-[color-mix(in_srgb,var(--genre-pale)_50%,transparent)] max-[900px]:grid-cols-[20px_30px_minmax(110px,1fr)_34px] max-[900px]:gap-2.5 max-[900px]:px-3 max-[600px]:min-h-17.75 max-[600px]:grid-cols-[18px_28px_minmax(100px,1fr)_32px] max-[600px]:gap-2 max-[600px]:px-2" key={track.title}>
+              <span className="font-mono text-[9px] text-(--genre-accent) md:text-xs max-[600px]:text-[10px]">0{index + 1}</span>
               <span className="grid size-7.75 place-items-center rounded-full bg-(--genre-pale) text-(--genre-accent) transition-transform duration-300 hover:rotate-45"><Disc3 size={20} strokeWidth={1.4} /></span>
               <div><h3 className="mb-0.75 text-xs font-medium text-ink max-[600px]:text-[12px]">{track.title}</h3><span className="text-[9px] text-[#8b8981] md:text-xs max-[600px]:text-[10px]">{track.artist}</span></div>
               <span className="text-[9px] text-[#8b8981] md:text-xs max-[900px]:hidden">{track.note}</span>
@@ -171,7 +170,7 @@ function GenrePage({ genre }) {
         <span className="eyebrow shrink-0 max-[600px]:text-[10px]">BACA LEBIH LANJUT</span>
         <div className="flex flex-wrap gap-x-4.25 gap-y-2.25">
           {genre.sources.map((source) => (
-            <a className="inline-flex items-center gap-1.25 text-[9px] text-[#727169] hover:text-ink md:text-xs max-[600px]:text-[11px]" key={source.label} href={source.href} target="_blank" rel="noreferrer">
+            <a className="inline-flex items-center gap-1.25 text-[9px] text-[#727169] transition-colors hover:text-(--genre-accent) md:text-xs max-[600px]:text-[11px]" key={source.label} href={source.href} target="_blank" rel="noreferrer">
               {source.label}<ArrowRight size={13} />
             </a>
           ))}

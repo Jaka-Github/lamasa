@@ -30,7 +30,6 @@ export function SubgenreCard({ item, index }) {
     gsap.to(event.currentTarget.querySelector('.subgenre-card__inner'), {
       rotateY: (x - 0.5) * 8,
       rotateX: (0.5 - y) * 8,
-      scale: 1.025,
       duration: 0.35,
       ease: 'power2.out',
       transformPerspective: 800,
@@ -39,14 +38,32 @@ export function SubgenreCard({ item, index }) {
   }
 
   function resetCard(event) {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const duration = prefersReducedMotion ? 0 : 0.4
 
-    gsap.to(event.currentTarget.querySelector('.subgenre-card__inner'), {
-      rotateX: 0,
-      rotateY: 0,
-      scale: 1,
-      duration: 0.65,
-      ease: 'elastic.out(1, 0.55)',
+    if (!prefersReducedMotion) {
+      gsap.to(event.currentTarget.querySelector('.subgenre-card__inner'), {
+        rotateX: 0,
+        rotateY: 0,
+        duration: 0.65,
+        ease: 'elastic.out(1, 0.55)',
+      })
+    }
+
+    gsap.to(event.currentTarget.querySelector('.subgenre-card__title'), {
+      color: '#292923',
+      duration,
+      ease: 'power2.out',
+      overwrite: 'auto',
+    })
+  }
+
+  function highlightTitle(event) {
+    gsap.to(event.currentTarget.querySelector('.subgenre-card__title'), {
+      color: item.color,
+      duration: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 0.45,
+      ease: 'power2.out',
+      overwrite: 'auto',
     })
   }
 
@@ -54,6 +71,7 @@ export function SubgenreCard({ item, index }) {
     <article
       className="subgenre-card relative min-h-56.25 min-w-0 cursor-default bg-[#f1f0eb] nth-[2n]:bg-[#f2f0e9] max-[900px]:min-h-47.5 max-[600px]:min-h-48"
       onMouseMove={tiltCard}
+      onMouseEnter={highlightTitle}
       onMouseLeave={resetCard}
       style={{ '--subgenre-accent': item.color }}
     >
@@ -64,7 +82,7 @@ export function SubgenreCard({ item, index }) {
         </div>
         <div className="relative">
           <span className="eyebrow text-[#929087] max-[600px]:text-[10px]">{item.origin}</span>
-          <h3 className="my-1.75 text-[18px] font-medium tracking-[-.045em] text-[#292923] max-[600px]:text-[18px]">{item.name}</h3>
+          <h3 className="subgenre-card__title my-1.75 text-[18px] font-medium tracking-[-.045em] text-[#292923] max-[600px]:text-[18px]">{item.name}</h3>
           <p className="max-w-57.5 text-[10px] leading-[1.65] text-[#85847c] md:text-[13px] max-[600px]:text-[11px]">{item.detail}</p>
         </div>
         <div className="relative h-px w-8.75 bg-(--subgenre-accent) opacity-70" />

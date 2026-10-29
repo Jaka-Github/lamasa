@@ -122,6 +122,14 @@
   font-style: italic;
 }
 
+.subgenre-card {
+  transition: box-shadow .35s ease;
+}
+
+.subgenre-card:hover {
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--subgenre-accent) 10%, transparent);
+}
+
 .subgenre-card__inner {
   transform-style: preserve-3d;
   will-change: transform;
@@ -182,6 +190,28 @@
 .genre-page > section {
   position: relative;
   z-index: 1;
+}
+
+.genre-section-wash {
+  position: relative;
+  isolation: isolate;
+}
+
+.genre-section-wash::before {
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--genre-pale) 64%, transparent) 0%,
+    color-mix(in srgb, var(--genre-pale) 22%, transparent) 58%,
+    transparent 100%
+  );
+  content: '';
+  pointer-events: none;
 }
 
 .genre-parallax-orb {
