@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from 'react'
-import { ArrowDown, ArrowLeft, ArrowRight, AudioLines, Disc3, Headphones } from 'lucide-react'
+import { ArrowDown, ArrowLeft, ArrowRight, Disc3, Headphones } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Link } from 'react-router-dom'
@@ -77,7 +77,7 @@ function GenrePage({ genre }) {
         <span className="genre-parallax-orb genre-parallax-orb--one" />
         <span className="genre-parallax-orb genre-parallax-orb--two" />
       </div>
-      <section className="genre-hero page-shell relative grid min-h-133.75 grid-cols-[1fr_.9fr] items-center pb-20 pt-14.5 max-[900px]:grid-cols-[1fr_.85fr] max-[600px]:min-h-0 max-[600px]:grid-cols-1 max-[600px]:pb-19.25 max-[600px]:pt-27.75" id="top">
+      <section className="genre-hero page-shell relative grid min-h-133.75 grid-cols-[1fr_.9fr] items-center pb-20 pt-14.5 max-[900px]:grid-cols-[1fr_.85fr] max-[600px]:min-h-0 max-[600px]:grid-cols-1 max-[600px]:pb-19.25 max-[600px]:pt-27.75 mb-10" id="top">
         <div className="genre-hero__copy relative z-2 flex flex-col items-start pb-4.25 pt-3.75 max-[600px]:pb-0">
           <Link className="mb-10 inline-flex items-center gap-2 rounded-none border border-[color-mix(in_srgb,var(--genre-accent)_22%,var(--genre-pale))] bg-(--genre-pale) px-3.5 py-2 text-xs text-[#5f5e57] transition-colors hover:bg-[color-mix(in_srgb,var(--genre-pale)_82%,var(--genre-accent))] hover:text-ink active:bg-[color-mix(in_srgb,var(--genre-pale)_82%,var(--genre-accent))] active:text-ink focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--genre-accent) md:text-[14px] max-[600px]:mb-7.25" to="/"><ArrowLeft size={16} /> Semua genre</Link>
           <span className="genre-hero__kicker eyebrow inline-flex items-center gap-2.25 max-[600px]:flex-wrap"><span className="size-1.5 rounded-full bg-(--genre-accent)" /> {genre.era} <span className="text-[#c2c0b8]">/</span> {genre.origin}</span>
@@ -87,21 +87,19 @@ function GenrePage({ genre }) {
             <a className="inline-flex min-h-10.75 items-center justify-center gap-3.25 bg-ink px-4 text-[11px] text-white transition hover:-translate-y-0.5 hover:bg-[#4c4c43] md:text-[13px]" href="#story">Start <ArrowDown size={15} /></a>
             <span className="inline-flex items-center gap-1.75 text-[10px] text-[#88877f] md:text-xs"><Headphones size={15} /> Dengarkan konteksnya</span>
           </div>
-          <div className="mt-11.75 flex items-center gap-4.75 text-[10px] text-[#89887f] md:text-xs max-[600px]:mt-7.5"><span><strong className="mr-1.25 font-mono text-[11px] font-normal text-ink md:text-xs">04</strong> segmen untuk dijelajahi</span></div>
         </div>
 
         <div className="genre-hero__art relative mt-5.5 h-90.5 w-full max-w-110 justify-self-end max-[600px]:mx-auto max-[600px]:mt-8.75 max-[600px]:h-72.5 max-[600px]:w-[calc(100%-12px)]">
           <GenrePlanet accent={genre.accent} pale={genre.pale} />
           <GenreArtwork className="genre-art--dotted-icon genre-art--hero" genre={genre} />
           <span className="absolute right-[-3%] top-[17%] bg-paper px-2.75 py-2.25 font-mono text-[8px] leading-[1.7] tracking-[.14em] text-[color-mix(in_srgb,var(--genre-accent)_78%,#39352d)] transform-[rotate(5deg)] md:text-xs max-[600px]:top-[12%]">SOUND<br />ARCHIVE<br /><small className="text-[7px] text-[#929087] md:text-xs">No. 0{currentIndex + 1}</small></span>
-          <span className="absolute -bottom-6.25 right-0 inline-flex items-center gap-1.75 font-mono text-[8px] tracking-widest text-[#85847c] md:text-xs"><AudioLines size={13} /> POTRET SEBUAH GENRE</span>
         </div>
         <a href="#story" className="absolute bottom-5.75 left-0 inline-flex items-center gap-3 font-mono text-[8px] tracking-[.13em] text-[#89887f] md:text-xs max-[600px]:bottom-5" aria-label="Gulir ke cerita">
           <span>SCROLL UNTUK MEMULAI</span><ArrowDown size={14} />
         </a>
       </section>
 
-      <section className="genre-section-wash page-shell grid min-h-78.75 grid-cols-[.8fr_1.35fr_.9fr] items-start gap-10.5 border-t border-line py-18 max-[900px]:grid-cols-[.6fr_1.4fr] max-[900px]:gap-6.25 max-[600px]:grid-cols-1 max-[600px]:gap-5.5 max-[600px]:py-13" id="story">
+      <section className="genre-section-wash page-shell grid min-h-78.75 grid-cols-[.8fr_1.35fr_.9fr] items-start gap-10.5 py-18 max-[900px]:grid-cols-[.6fr_1.4fr] max-[900px]:gap-6.25 max-[600px]:grid-cols-1 max-[600px]:gap-5.5 max-[600px]:py-13" id="story">
         <span className="section-index text-(--genre-accent) max-[600px]:text-[10px]">01 / AWAL MULA</span>
         <div>
           <span className="eyebrow text-(--genre-accent) font-semibold">DARI MANA SUARANYA BERASAL?</span>
@@ -115,7 +113,7 @@ function GenrePage({ genre }) {
         </div>
       </section>
 
-      <section className="page-shell border-t border-line pb-21.5 pt-18.75 max-[600px]:pb-15 max-[600px]:pt-13.5">
+      <section className="page-shell pb-21.5 pt-18.75 max-[600px]:pb-15 max-[600px]:pt-13.5">
         <div className="mb-10.5 flex items-end justify-between gap-8.75 max-[600px]:mb-7.25 max-[600px]:flex-col max-[600px]:items-start max-[600px]:gap-3.75">
           <div><span className="section-index text-(--genre-accent) max-[600px]:text-[10px]">02 / GARIS WAKTU</span><h2 className="mb-0 mt-4.25 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-[38px]">Terus <span className="serif-italic text-(--genre-accent)">berubah.</span></h2></div>
           <p className="mb-1.25 max-w-78.75 text-xs leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mb-0 max-[600px]:max-w-87.5 max-[600px]:text-[13px]">Sebuah sketsa perjalanan, bukan garis yang lurus. Tiap era saling meninggalkan jejak.</p>
