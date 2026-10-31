@@ -99,7 +99,7 @@ function GenrePage({ genre }) {
         </a>
       </section>
 
-      <section className="genre-section-wash page-shell grid min-h-78.75 grid-cols-[.8fr_1.35fr_.9fr] items-start gap-10.5 py-18 max-[900px]:grid-cols-[.6fr_1.4fr] max-[900px]:gap-6.25 max-[600px]:grid-cols-1 max-[600px]:gap-5.5 max-[600px]:py-13" id="story">
+      <section className="page-shell grid min-h-78.75 grid-cols-[.8fr_1.35fr_.9fr] items-start gap-10.5 py-18 max-[900px]:grid-cols-[.6fr_1.4fr] max-[900px]:gap-6.25 max-[600px]:grid-cols-1 max-[600px]:gap-5.5 max-[600px]:py-13" id="story">
         <span className="section-index text-(--genre-accent) max-[600px]:text-[10px]">01 / AWAL MULA</span>
         <div>
           <span className="eyebrow text-(--genre-accent) font-semibold">DARI MANA SUARANYA BERASAL?</span>
@@ -132,7 +132,7 @@ function GenrePage({ genre }) {
         </div>
       </section>
 
-      <section className="genre-section-wash page-shell border-t border-line pb-22 pt-19 max-[600px]:pb-15 max-[600px]:pt-13.5">
+      <section className="page-shell border-t border-line pb-22 pt-19 max-[600px]:pb-15 max-[600px]:pt-13.5">
         <div className="mb-10.5 flex items-end justify-between gap-8.75 max-[600px]:mb-7.25 max-[600px]:flex-col max-[600px]:items-start max-[600px]:gap-3.75">
           <div><span className="section-index text-(--genre-accent) max-[600px]:text-[10px]">03 / SUB GENRE</span><h2 className="mb-0 mt-4.25 text-[43px] font-medium leading-[1.08] tracking-[-.065em] text-ink max-[600px]:mt-2.75 max-[600px]:text-4xl">Satu akar,<br /><span className="serif-italic text-(--genre-accent)">banyak arah.</span></h2></div>
           <p className="mb-1.25 max-w-78.75 text-xs leading-[1.8] text-[#85847c] md:text-[13px] max-[600px]:mb-0 max-[600px]:max-w-87.5 max-[600px]:text-[11px]">Subgenre saling tumpang tindih dan terus berevolusi. Berikut adalah jalur untuk mengenal <span className="font-semibold">{genre.name}</span> lebih dekat.</p>

@@ -38,40 +38,20 @@ export function SubgenreCard({ item, index }) {
   }
 
   function resetCard(event) {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const duration = prefersReducedMotion ? 0 : 0.4
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-    if (!prefersReducedMotion) {
-      gsap.to(event.currentTarget.querySelector('.subgenre-card__inner'), {
-        rotateX: 0,
-        rotateY: 0,
-        duration: 0.65,
-        ease: 'elastic.out(1, 0.55)',
-      })
-    }
-
-    gsap.to(event.currentTarget.querySelector('.subgenre-card__title'), {
-      color: '#292923',
-      duration,
-      ease: 'power2.out',
-      overwrite: 'auto',
-    })
-  }
-
-  function highlightTitle(event) {
-    gsap.to(event.currentTarget.querySelector('.subgenre-card__title'), {
-      color: item.color,
-      duration: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 0.45,
-      ease: 'power2.out',
-      overwrite: 'auto',
+    gsap.to(event.currentTarget.querySelector('.subgenre-card__inner'), {
+      rotateX: 0,
+      rotateY: 0,
+      duration: 0.65,
+      ease: 'elastic.out(1, 0.55)',
     })
   }
 
   return (
     <article
-      className="subgenre-card relative min-h-56.25 min-w-0 cursor-default bg-[#f1f0eb] nth-[2n]:bg-[#f2f0e9] max-[900px]:min-h-47.5 max-[600px]:min-h-48"
+      className="subgenre-card relative min-h-56.25 min-w-0 cursor-default max-[900px]:min-h-47.5 max-[600px]:min-h-48"
       onMouseMove={tiltCard}
-      onMouseEnter={highlightTitle}
       onMouseLeave={resetCard}
       style={{ '--subgenre-accent': item.color }}
     >

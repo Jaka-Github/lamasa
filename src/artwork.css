@@ -123,6 +123,7 @@
 }
 
 .subgenre-card {
+  background: color-mix(in srgb, var(--subgenre-accent) 9%, var(--color-paper));
   transition: box-shadow .35s ease;
 }
 
@@ -133,6 +134,14 @@
 .subgenre-card__inner {
   transform-style: preserve-3d;
   will-change: transform;
+}
+
+.subgenre-card__title {
+  transition: color .4s ease;
+}
+
+.subgenre-card:hover .subgenre-card__title {
+  color: color-mix(in srgb, var(--subgenre-accent) 38%, #292923);
 }
 
 .subgenre-card__inner::before {
