@@ -12,7 +12,7 @@ function SiteFooter() {
           <span className="font-sans text-[14px] font-semibold tracking-[.12em] text-ink md:text-[15px]">LAMASA</span>
         </Link>
         <p className="text-[10px] text-[#85847c] md:text-[13px] max-[600px]:text-[11px]">Catatan kecil tentang bunyi yang membentuk kita.</p>
-        <a className="mt-2 inline-flex items-center gap-1.5 text-[9px] text-muted md:text-xs max-[600px]:text-[11px]" href="#top" onClick={(event) => {
+        <a className="mt-2 inline-flex items-center gap-1.5 text-[9px] text-muted hover:text-ink md:text-sm max-[600px]:text-[11px]" href="#top" onClick={(event) => {
           event.preventDefault()
           window.scrollTo({ top: 0, behavior: 'smooth' })
         }}>
