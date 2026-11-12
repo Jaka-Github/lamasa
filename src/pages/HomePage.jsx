@@ -69,7 +69,7 @@ function HomePage() {
       </section>
 
       <section className="intro-strip page-shell grid min-h-32 grid-cols-[1fr_2.3fr_40px] items-center gap-6 border-y border-line max-[600px]:grid-cols-[1fr_35px] max-[600px]:gap-2.25">
-        <span className="section-index max-[600px]:self-end">01 / MULAI DARI MANA SAJA</span>
+        <span className="section-index max-[600px]:self-end">MULAI DARI MANA SAJA</span>
         <p className="max-w-155 text-xl leading-normal tracking-[-.035em] text-[#46463f] max-[600px]:col-start-1 max-[600px]:row-start-2 max-[600px]:self-start max-[600px]:text-[17px]">Musik tidak berdiri sendiri. Ia bergerak bersama <em className="font-editorial text-[1.05em] text-[#818077]">orang, tempat, dan waktu.</em></p>
         <span className="grid size-8.75 place-items-center rounded-full border border-line text-muted max-[600px]:col-start-2 max-[600px]:row-span-2 max-[600px]:row-start-1 max-[600px]:size-7.75"><AudioLines size={19} /></span>
       </section>
